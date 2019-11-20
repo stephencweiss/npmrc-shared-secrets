@@ -7,5 +7,5 @@ if [[ -e "./.npmrc" ]]; then
     echo "Creating .npmrc file"
     touch ./.npmrc
     echo "@fortawesome:registry=https://npm.fontawesome.com/
-//npm.fontawesome.com/:_authToken=${npm_config_replaceable}" >> ./.npmrc
+//npm.fontawesome.com/:_authToken=$(npm config get replaceable)" >> ./.npmrc
 fi
