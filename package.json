@@ -1,7 +1,7 @@
 {
   "name": "npmrc-example",
   "version": "0.0.1",
-  "description": "",
+  "description": "Dynamically replace variables in `.npmrc` without modifying a .bash_profile",
   "main": "index.js",
   "config": {
     "replaceable": "unset"
