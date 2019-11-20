@@ -1,0 +1,17 @@
+{
+  "name": "npmrc-example",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "replaceable": "unset"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "configure-dev": "./configure-env.sh",
+    "preinstall": "npm run configure-dev && set -a && source ./.env && set +a && npm config set replaceable ${VARIABLE_NAME:-temporary} && npm config get replaceable && ./setup.sh",
+    "postinstall": "echo \"variable is not accessible without sourcing .env -> ${VARIABLE_NAME}\" && echo \"npm_config_replaceable is accessible still -> ${npm_config_replaceable}\" && npm config get replaceable && rm -rf .npmrc"
+  },
+  "author": "Stephen Weiss <stephencweiss@gmail.com> (https://stephencharlesweiss.com)",
+  "license": "MIT"
+}
